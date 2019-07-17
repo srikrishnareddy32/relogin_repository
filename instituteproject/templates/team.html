@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+<html>
+<head>
+    <title>team page</title>
+</head>
+<body>
+{% block content %}
+
+<div class="team">
+    <h1>wellcome to team</h1>
+    <span class="sp1"></span>
+    <div class="pic">
+        <a href="#p1"><img src="{% static 'images/sri.jpg' %}" style="width: 20%;height: 20%"></a>
+        <a href="#p2"><img src="{% static 'images/sri.jpg' %}" style="width: 20%;height: 20%"></a>
+        <a href="#p3"><img src="{% static 'images/sri.jpg' %}" style="width: 20%;height: 20%"></a>
+    </div>
+    <div class="section" id="p1">
+        <h1 class="name">krishna</h1>
+        <span class="sp1"></span>
+        <center>
+        <p>hello krisshna</p>
+            </center>
+    </div>
+    <div class="section" id="p2">
+        <h1 class="name">reddy</h1>
+        <span class="sp1"></span>
+        <center>
+        <p>hello reddy</p>
+            </center>
+    </div>
+    <div class="section" id="p3">
+        <h1 class="name">sri</h1>
+        <span class="sp1"></span>
+        <center>
+        <p>hello sri</p>
+            </center>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<html>
+<head>
+    <title>gallery page</title>
+</head>
+<body style="background-color: white">
+{% block content %}
+    <style>
+    h1{
+        font-size: 60px;
+        color: red;
+        text-shadow: 4px 4px black;
+    }
+    img{
+        border-radius: 20px;
+        box-shadow: 5px 5px blue,-5px -5px red;
+    }
+    .container img{
+        filter: grayscale(100%);
+        transition: 1.3s;
+        width: 100%;
+        height: 50%;
+    }
+    .container img:hover{
+        filter: grayscale(0%);
+        transform: scale(1.1);
+    }
+    .cls2 img{
+        filter: grayscale(100%);
+        transition: 1.3s;
+        width: 100%;
+        height: 50%;
+    }
+    .cls2 img:hover{
+        filter: grayscale(0%);
+        transform: scale(1.1);
+    }
+    .slider{
+        animation: 3s infinite;
+    }
+    </style>
+    <center>
+    <h1>Our Gallery</h1><br>
+    </center>
+   <div class="container">
+   <div class="row">
+       <div class="col-md-3 slider">
+          <a href="{% static 'images/india.jpg' %}" data-lightbox="container"><img src="{% static 'images/sri.jpg' %}"></a>
+       </div>
+       <div class="col-md-3">
+           <a href="{% static 'images/sri.jpg' %}" data-lightbox="container"><img src="{% static 'images/sri.jpg' %}"></a>
+       </div>
+       <div class="col-md-3">
+           <a href="{% static 'images/sri.jpg' %}" data-lightbox="container"><img src="{% static 'images/sri.jpg' %}"></a>
+       </div>
+       <div class="col-md-3">
+           <a href="{% static 'images/sri.jpg' %}" data-lightbox="container"><img src="{% static 'images/sri.jpg' %}"></a>
+       </div>
+   </div>
+    </div><br>
+   <div class="container cls2">
+   <marquee scrollamount="20" >
+   <div class="row">
+       <div class="col-md-6">
+           <img src="{% static 'images/india.jpg' %}" style="height: 50%;width: 100%;" id="img1">
+           <center>
+               <h4>India image</h4>
+           </center>
+       </div>
+       <div class="col-md-6">
+           <img src="{% static 'images/nature2.jpeg' %}" style="height: 50%;width: 100%" id="img1">
+           <center>
+               <h4>Good Beach image</h4>
+           </center>
+       </div>
+   </div><br>
+   </marquee>
+       <marquee behavior="alternate" scrolldelay="40">
+   <div class="row">
+       <div class="col-md-6">
+           <img src="{% static 'images/matrimonial.jpg' %}" style="height: 50%;width: 100%" id="img1">
+       </div>
+       <div class="col-md-6">
+           <img src="{% static 'images/images.jpg' %}" style="height: 50%;width: 100%" id="img1">
+       </div>
+   </div><br>
+    </marquee>
+   <marquee behavior="slide">
+   <div class="row">
+       <div class="col-md-6">
+           <img src="{% static 'images/nature3.jpeg' %}" style="height: 50%;width: 100%" id="img1">
+       </div>
+       <div class="col-md-6">
+           <img src="{% static 'images/nature4.jpeg' %}" style="height: 50%;width: 100%" id="img1">
+       </div>
+   </div><br>
+   </marquee>
+   </div>
+{% endblock %}
+</body>
+</html>

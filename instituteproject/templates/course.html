@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+<html>
+<head>
+    <title>courses page</title>
+</head>
+<body>
+{% block content %}
+    <style>
+    table{
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+    th,td{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    thead{
+        background-color: chartreuse;
+    }
+    tbody:nth-of-type(even){
+        background-color: blue;
+    }
+    tbody:nth-of-type(odd){
+        background-color: aqua;
+    }
+     h3{
+        font-size: 60px;
+        color: red;
+        text-shadow: 4px 4px black;
+    }
+    </style>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+             {% if course %}
+                 <center>
+                 <h3>Courses Avalible In Our Durgasoft</h3>
+                 </center>
+                 <table border="2px">
+                 <thead>
+                 <tr>
+                     <th>Id</th>
+                     <th>Course Name</th>
+                     <th>Faculty Name</th>
+                     <th>Faculty experience</th>
+                     <th>Course Fee</th>
+                     <th>Course Duration</th>
+                     <th>Starting Date</th>
+                     <th>Starting Time</th>
+                 </tr>
+                 </thead>
+                 {% for i in course %}
+                     <tbody>
+                     <tr>
+                         <td>{{ i.course_id }}</td>
+                         <td>{{ i.course_name }}</td>
+                         <td>{{ i.faculty_name }}</td>
+                         <td>{{ i.faculty_ex }}</td>
+                         <td>{{ i.course_fee }}</td>
+                         <td>{{ i.course_duration }}</td>
+                         <td>{{ i.starting_date }}</td>
+                         <td>{{ i.starting_time }}</td>
+                     </tr>
+                    </tbody>
+                 {% endfor %}
+                 </table>
+             {% else %}
+                 <h3>Sorry NO courses avalible</h3>
+             {% endif %}
+        </div>
+    </div>
+    </div>
+{% endblock %}
+</body>
+</html>

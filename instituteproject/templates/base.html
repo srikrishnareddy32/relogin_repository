@@ -1,0 +1,113 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>base</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+    <script type="text/javascripte" src="{% static 'javascripts/lightbox-plus-jquery.min.js' %}">
+    </script>
+    <link rel="stylesheet" href="{% static 'css/team.css' %}">
+</head>
+<style>
+
+    #fbcol6{
+        background-color: deepskyblue;
+    }
+     #fbh1{
+        color: blueviolet;
+        text-shadow: 3px 3px darkred;
+    }
+    #ul1{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        overflow: hidden;
+    }
+    #li1{
+        float: left;
+    }
+    .active{
+        background-color: blue;
+    }
+    li a{
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        text-decoration: none;
+
+    }
+    li a:hover{
+        background-color: green;
+        color: black;
+    }
+    .footer{
+        position: relative;
+        width: 100%;
+        bottom: 0px;
+        background-color: black;
+        color: white;
+        text-align: center;
+
+    }
+    .ccls1{
+        color: darkred;
+        font-size: 20px;
+
+    }
+    .ccls2{
+        border: 2px solid black;
+        background-color: deepskyblue;
+    }
+    #h11{
+        font-size: 50px;
+        color: black;
+        text-shadow: 3px 3px red;
+        font-family: Cambria;
+        font-size: 70px;
+    }
+    b{
+        color: red;
+        width: 100%;
+    }
+    p{
+        border: 2px solid black;
+        background-color: aliceblue;
+    }
+    body{
+        background-color: #ffdd8a
+    }
+     h1{
+        font-size: 60px;
+        color: red;
+        text-shadow: 4px 4px black;
+    }
+     h2{
+        font-size: 60px;
+        color: red;
+        text-shadow: 4px 4px black;
+    }
+</style>
+<body>
+<ul id="ul1">
+    <li id="li1"><a href="/home/" class="active">home</a></li>
+    <li id="li1"><a href="/contact/">contact</a></li>
+    <li id="li1"><a href="/courses/">courses</a></li>
+    <li id="li1"><a href="/feedback/">feedback</a></li>
+    <li id="li1"><a href="/team/">our team</a></li>
+    <li id="li1"><a href="/gallery/">gallery</a></li>
+</ul>
+<marquee scrollamount="30" width="80%" onmouseover="this.stop();" onmouseout="this.start();" direction="right"><center><h1 id="h11">welcome Durgasoft</h1></center></marquee>
+{% block content %}
+{% endblock %}
+<footer class="footer">
+    <h3>thank you bro</h3>
+</footer>
+</body>
+</html>

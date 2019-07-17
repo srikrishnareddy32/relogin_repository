@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+<html>
+<head>
+    <title>feedback page</title>
+</head>
+<body class="fbbody">
+{% block content %}
+    <style>
+    form{
+        margin-bottom: 50px;
+    }
+    </style>
+    <h3 id="inner"></h3>
+    <center>
+<h1 id="fbh1">feedback page</h1>
+    </center>
+    <div class="container cls1">
+       <div class="row">
+           <div class="offset-md-3 col-md-6" >
+               {% if ab %}
+                   <h3>Our Feedbacks </h3>
+                   {% for i in ab %}
+                       {% if i.Rating >= 6 and i.Rating <= 10 %}
+                           Date:{{ i.Date }}<br>
+                           <p><b>Name:</b><br>{{ i.Name.capitalize }}<br>
+                           <b>Rating:</b><br>{{ i.Rating }}<br>
+                           <b>Feedback:</b><br>{{ i.Feedback.capitalize }}<br><br></p>
+                       {% endif %}
+                   {% endfor %}
+               {% else %}
+                   <h4>No Feedbacks</h4>
+               {% endif %}
+               <h2>Enter your feedback</h2>
+               <form method="POST" id="fbcol6">
+                   {% csrf_token %}
+                   {{ fb }}<br>
+                   <center>
+                   <input type="submit" value="submit" class="btn btn-success">
+                   <input type="reset" value="clear" class="btn btn-danger">
+                       </center>
+               </form>
+           </div>
+       </div>
+    </div>
+{% endblock %}
+</body>
+</html>
